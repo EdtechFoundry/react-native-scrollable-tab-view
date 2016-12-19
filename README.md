@@ -31,13 +31,13 @@ var App = React.createClass({
     return (
       <ScrollableTabView>
         <Tab tabLabel="React" icon={<Icon name="react-icon"/>}>
-            <ReactPage tabLabel="React" />
+            <ReactPage/>
         </Tab>
         <Tab tabLabel="Flow" icon={<Icon name="flow-icon"/>}>
-            <FlowPage tabLabel="Flow" />
+            <FlowPage/>
         </Tab>
         <Tab tabLabel="Jest" icon={<Icon name="jest-icon"/>}>
-            <JestPage tabLabel="Jest" />
+            <JestPage/>
         </Tab>
       </ScrollableTabView>
     );
@@ -60,13 +60,13 @@ var App = React.createClass({
     return (
       <ScrollableTabView renderTabBar={() => <CustomTabBar someProp={'here'} />}>
         <Tab tabLabel="React" icon={<Icon name="react-icon"/>}>
-            <ReactPage tabLabel="React" />
+            <ReactPage/>
         </Tab>
         <Tab tabLabel="Flow" icon={<Icon name="flow-icon"/>}>
-            <FlowPage tabLabel="Flow" />
+            <FlowPage/>
         </Tab>
         <Tab tabLabel="Jest" icon={<Icon name="jest-icon"/>}>
-            <JestPage tabLabel="Jest" />
+            <JestPage/>
         </Tab>
       </ScrollableTabView>
     );
