@@ -24,14 +24,21 @@ the animations behind this work, check out the Rebound section of the
 
 ```javascript
 var ScrollableTabView = require('react-native-scrollable-tab-view');
+var Tab = ScrollableTabView.Tab;
 
 var App = React.createClass({
   render() {
     return (
       <ScrollableTabView>
-        <ReactPage tabLabel="React" />
-        <FlowPage tabLabel="Flow" />
-        <JestPage tabLabel="Jest" />
+        <Tab tabLabel="React" icon={<Icon name="react-icon"/>}>
+            <ReactPage tabLabel="React" />
+        </Tab>
+        <Tab tabLabel="Flow" icon={<Icon name="flow-icon"/>}>
+            <FlowPage tabLabel="Flow" />
+        </Tab>
+        <Tab tabLabel="Jest" icon={<Icon name="jest-icon"/>}>
+            <JestPage tabLabel="Jest" />
+        </Tab>
       </ScrollableTabView>
     );
   }
@@ -46,14 +53,21 @@ it into our `ScrollableTabView` like this:
 ```javascript
 var ScrollableTabView = require('react-native-scrollable-tab-view');
 var CustomTabBar = require('./CustomTabBar');
+var Tab = ScrollableTabView.Tab;
 
 var App = React.createClass({
   render() {
     return (
       <ScrollableTabView renderTabBar={() => <CustomTabBar someProp={'here'} />}>
-        <ReactPage tabLabel="React" />
-        <FlowPage tabLabel="Flow" />
-        <JestPage tabLabel="Jest" />
+        <Tab tabLabel="React" icon={<Icon name="react-icon"/>}>
+            <ReactPage tabLabel="React" />
+        </Tab>
+        <Tab tabLabel="Flow" icon={<Icon name="flow-icon"/>}>
+            <FlowPage tabLabel="Flow" />
+        </Tab>
+        <Tab tabLabel="Jest" icon={<Icon name="jest-icon"/>}>
+            <JestPage tabLabel="Jest" />
+        </Tab>
       </ScrollableTabView>
     );
   }
