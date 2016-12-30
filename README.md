@@ -30,13 +30,13 @@ var App = React.createClass({
   render() {
     return (
       <ScrollableTabView>
-        <Tab tabLabel="React" icon={<Icon name="react-icon"/>}>
+        <Tab tabLabel="React" icon={<Icon name="react-icon"/>} activeIcon={<Icon name="react-icon" color="red"/>}>
             <ReactPage/>
         </Tab>
-        <Tab tabLabel="Flow" icon={<Icon name="flow-icon"/>}>
+        <Tab tabLabel="Flow" icon={<Icon name="flow-icon"/>} activeIcon={<Icon name="flow-icon" color="red"/>}>
             <FlowPage/>
         </Tab>
-        <Tab tabLabel="Jest" icon={<Icon name="jest-icon"/>}>
+        <Tab tabLabel="Jest" icon={<Icon name="jest-icon"/>} activeIcon={<Icon name="jest-icon" color="red"/>}>
             <JestPage/>
         </Tab>
       </ScrollableTabView>

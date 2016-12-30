@@ -34,7 +34,7 @@ const DefaultTabBar = React.createClass({
   renderTabOption(name, page) {
   },
 
-  renderTab(name, icon, page, isTabActive, onPressHandler) {
+  renderTab(name, icon, activeIcon, page, isTabActive, onPressHandler) {
     const { activeTextColor, inactiveTextColor, textStyle, iconStyle, } = this.props;
     const textColor = isTabActive ? activeTextColor : inactiveTextColor;
 
@@ -47,10 +47,14 @@ const DefaultTabBar = React.createClass({
       onPress={() => onPressHandler(page)}
     >
       <View style={[styles.tab, this.props.tabStyle, ]}>
-        {
-          !!icon &&
+        { icon &&
           <View style={[styles.icon, iconStyle, ]}>
-            {icon}
+            {
+              !!activeIcon && isTabActive ?
+                activeIcon
+                :
+                icon
+            }
           </View>
         }
         <Text style={[{color: textColor, }, textStyle, ]}>
@@ -76,10 +80,10 @@ const DefaultTabBar = React.createClass({
     });
     return (
       <View style={[styles.tabs, {backgroundColor: this.props.backgroundColor, }, this.props.style, ]}>
-        {this.props.tabs.map(({label, icon, }, page) => {
+        {this.props.tabs.map(({label, icon, activeIcon, }, page) => {
           const isTabActive = this.props.activeTab === page;
           const renderTab = this.props.renderTab || this.renderTab;
-          return renderTab(label, icon, page, isTabActive, this.props.goToPage);
+          return renderTab(label, icon, activeIcon, page, isTabActive, this.props.goToPage);
         })}
         <Animated.View style={[tabUnderlineStyle, { left, }, this.props.underlineStyle, ]} />
       </View>
