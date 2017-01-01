@@ -14,15 +14,24 @@ export default React.createClass({
         style={{marginTop: 20, }}
         renderTabBar={() => <DefaultTabBar />}
       >
-        <Tab tabLabel='TAB #1' icon={<Icon name='ios-paper' size={15}/>}>
+        <Tab tabLabel='TAB #1'
+             icon={<Icon name='ios-paper' size={15}/>}
+             activeIcon={<Icon name='ios-paper' size={15} color='red'/>}
+        >
           <Text>My</Text>
         </Tab>
 
-        <Tab tabLabel='TAB #2' icon={<Icon name='ios-people' size={15}/>}>
+        <Tab tabLabel='TAB #2'
+             icon={<Icon name='ios-people' size={15}/>}
+             activeIcon={<Icon name='ios-people' size={15} color='red'/>}
+        >
           <Text>favorite</Text>
         </Tab>
 
-        <Tab tabLabel='TAB #3' icon={<Icon name='ios-chatboxes' size={15}/>}>
+        <Tab tabLabel='TAB #3'
+             icon={<Icon name='ios-chatboxes' size={15}/>}
+             activeIcon={<Icon name='ios-chatboxes' size={15} color='red'/>}
+        >
           <Text>project</Text>
         </Tab>
 
